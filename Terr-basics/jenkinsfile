@@ -8,30 +8,25 @@ pipeline {
   }
   
   stages {
-    stage('checkout') {
-      steps {
-        sh 'https://github.com/manjugraju/Terraform_practice'
-      }
-    }
+    // stage('checkout') {
+    //   steps {
+    //     sh 'https://github.com/manjugraju/Terraform_practice'
+    //   }
+    // }
     stage('Terraform init') {
       steps {
-        sh 'terraform init'
+        sh 'terraform init -auto-approve'
       }
     }
     stage('Terraform plan') {
       steps {
-        sh 'terraform plan'
+        sh 'terraform plan -auto-approve'
       }
     }
         stage('Terraform deploy') {
       steps {
         sh 'terraform apply -auto-approve'
       }
-    }
-  }
-  post {
-    always {
-        cleanWs()
     }
   }
 }
