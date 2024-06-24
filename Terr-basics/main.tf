@@ -26,7 +26,9 @@ resource "aws_instance" "man-webserver5" {
     instance_type = var.instance_type
 }
 
-output "dnsname" {
+# output "dnsname" {
   
-  value = aws_instance.man-webserver5.public_dns
-}
+#   value = aws_instance.man-webserver5.public_dns
+# }
+
+
