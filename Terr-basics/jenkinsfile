@@ -15,7 +15,7 @@ pipeline {
                  script{
                         dir("Terr-basics")
                         {
-                            git "https://github.com/manjugraju/Terraform_practice.git"
+                            git branch: 'main', url: 'https://github.com/manjugraju/Terraform_practice.git'
                         }
                     }
                 }
